@@ -13,6 +13,8 @@ def task_1(parser):
     for node in nfa.values():
         print("{}:{}".format(node["id"], ",".join(node["epsilon_closures"])))
 
+    print("end")
+
 
 def compute_epsilon_closure(node):
     # DFS travelling along epsilon transitions
