@@ -28,9 +28,7 @@ class Parser:
             line = re.sub('\s', '', line)
         return lines
 
-    def parse_fa_graph(self):
-        automata = self.parse_fa()
-
+    def generate_graph(self, automata):
         graph = {}
         for state in automata['states']:
             graph[state] = {
@@ -46,7 +44,7 @@ class Parser:
                 "node": graph[trans[2]]
             })
 
-        return graph 
+        automata['graph'] = graph
 
 
     def parse_fa(self):
@@ -76,8 +74,7 @@ class Parser:
             # you should construct a more useful and efficient representation
             automata['delta'].append((s, c, t))
 
-
-
+        self.generate_graph(automata)
 
         return automata
 
