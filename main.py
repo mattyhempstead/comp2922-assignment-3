@@ -8,14 +8,7 @@ from sys import stdin
 from task_1 import task_1
 from task_2 import task_2
 from task_3 import task_3
-
-def task_4(parser):
-    """For each string, output 1 if the DFA accepts it, 0 otherwise.
-    The input is guaranteed to be a DFA."""
-    dfa = parser.parse_fa()
-    test_strings = parser.parse_test_strings()
-    # TODO: implement this
-    print('TODO: print some output')
+from task_4 import task_4
 
 if __name__ == '__main__':
 
