@@ -6,12 +6,12 @@ def task_2(parser):
     graph = nfa["graph"]
     closures = parser.parse_closures()
 
-    # states, alphabet, and start are the same for ep-free nfa
+    # states, alphabet, and start are the same for efnfa
     print(','.join(nfa['states']))
     print(','.join(nfa['alphabet']))
     print(nfa['start'])
 
-    # get final states of ep-free nfa
+    # get final states of efnfa
     final_states = []
     for start_node in closures:
         for end_node in closures[start_node]:
@@ -23,14 +23,16 @@ def task_2(parser):
     print(','.join(final_states))
 
     # get new transitions
-    for start_node in closures:
-        for end_node in closures[start_node]:
-            for edge in graph[end_node]["edges"]:
-                if edge["symbol"] != "":
+    for s in closures:
+        for q in closures[s]:
+            for t_edge in graph[q]["edges"]:
+                # if transition symbol from q to t is non-epsilon, 
+                # we can get to t from s using only this symbol.
+                if t_edge["symbol"] != "":
                     print("{},{},{}".format(
-                        start_node, 
-                        edge["symbol"], 
-                        edge["node"]["id"]
+                        s, 
+                        t_edge["symbol"], 
+                        t_edge["node"]["id"]
                     ))
 
     print("end")

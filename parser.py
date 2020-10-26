@@ -29,8 +29,11 @@ class Parser:
         return lines
 
     def generate_graph(self, automata):
-        """ Adds a graph representation to an automata """
+        """ Adds a graph representation to an automata dict """
         graph = {}
+
+        # Add node dicts containing id, edges,
+        # and whether node is start and/or terminal
         for state in automata['states']:
             graph[state] = {
                 'id': state,
@@ -39,6 +42,7 @@ class Parser:
                 'edges': []
             }
 
+        # Add edge dicts containing symbol and connected node
         for trans in automata['delta']:
             graph[trans[0]]["edges"].append({
                 "symbol": trans[1],
