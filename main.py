@@ -6,15 +6,7 @@ wish to."""
 from parser import Parser
 from sys import stdin
 from task_1 import task_1
-
-
-def task_2(parser):
-    """Construct and output an equivalent Epsilon free NFA.
-    The state names should not change."""
-    nfa = parser.parse_fa()
-    closures = parser.parse_closures()
-    # TODO: implement this
-    print('TODO: print some output')
+from task_2 import task_2
 
 def task_3(parser):
     """Construct and output an equivalent DFA.
