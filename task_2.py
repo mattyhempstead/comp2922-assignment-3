@@ -9,7 +9,7 @@ def task_2(parser):
     # states, alphabet, and start are the same for ep-free nfa
     print(','.join(nfa['states']))
     print(','.join(nfa['alphabet']))
-    print(','.join(nfa['start']))
+    print(nfa['start'])
 
     # get final states of ep-free nfa
     final_states = []
@@ -33,3 +33,4 @@ def task_2(parser):
                         edge["node"]["id"]
                     ))
 
+    print("end")

@@ -29,6 +29,7 @@ class Parser:
         return lines
 
     def generate_graph(self, automata):
+        """ Adds a graph representation to an automata """
         graph = {}
         for state in automata['states']:
             graph[state] = {
