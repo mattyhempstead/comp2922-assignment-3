@@ -7,13 +7,7 @@ from parser import Parser
 from sys import stdin
 from task_1 import task_1
 from task_2 import task_2
-
-def task_3(parser):
-    """Construct and output an equivalent DFA.
-    The input is guaranteed to be an Epsilon Free NFA."""
-    efnfa = parser.parse_fa()
-    # TODO: implement this
-    print('TODO: print some output')
+from task_3 import task_3
 
 def task_4(parser):
     """For each string, output 1 if the DFA accepts it, 0 otherwise.
